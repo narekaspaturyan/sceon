@@ -1,0 +1,12 @@
+@import 'styles/variables.scss';
+
+.error-boundary {
+  background: $color-primary;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  h3,
+  h4 {
+    margin: 3px 0;
+  }
+}

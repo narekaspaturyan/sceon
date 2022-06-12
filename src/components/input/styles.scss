@@ -1,0 +1,39 @@
+@import 'styles/variables.scss';
+
+.input-main-wrapper {
+  height: 80px;
+  .custom-input {
+    width: 100%;
+    height: $input-height;
+    padding: 13px 20px;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $input-radius;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 29px;
+
+    &::placeholder {
+      color: $color-border;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 29px;
+    }
+
+    &:focus {
+      border: solid 1px $color-primary;
+    }
+  }
+
+  .label {
+    display: inline-block;
+    padding: 0 0 10px 20px;
+  }
+
+  .input-error {
+    display: inline-block;
+    padding: 10px 0 0 20px;
+    font-size: 12px;
+    color: $color-red;
+  }
+}

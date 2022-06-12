@@ -1,0 +1,117 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.personal-main-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background: $color-background;
+  @include d-flex-center;
+
+  .form-wrapper {
+    @include d-flex-center;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 570px;
+    width: 100%;
+    min-height: 670px;
+    padding: 40px;
+    margin: 60px;
+    background: $color-white;
+    box-shadow: $shadow-el;
+    border-radius: $border-radius;
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    .personal-progress-wrapper {
+      @include d-flex-between;
+      width: 100%;
+
+      .progress-count {
+        position: relative;
+        height: 64px;
+        width: 64px;
+        border: solid 4px $color-primary;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-size: 22px;
+          font-weight: 700;
+        }
+      }
+
+      .previous {
+        color: $color-text-secondary;
+      }
+
+      button {
+        width: 100px;
+      }
+    }
+
+    .steps-wrapper {
+      width: 100%;
+      min-height: 230px;
+    }
+
+    .gender-select-wrapper {
+      @include d-flex-between;
+      .gender-select {
+        margin-bottom: 26px;
+        &.checked {
+          border: solid 1px $color-primary;
+        }
+        border: solid 1px $color-border;
+        height: $input-height;
+        padding: 0 20px;
+        @include d-flex-center;
+        justify-content: flex-start;
+        width: 200px;
+        border-radius: $input-radius;
+      }
+    }
+    .name-email-wrapper {
+      @include d-flex-between;
+      .input-wrapper {
+        padding-bottom: 26px;
+        width: 200px;
+      }
+    }
+
+    .newsletter-wrapper {
+      margin-top: 20px;
+    }
+  }
+
+  .header-text {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+    color: $color-text-primary;
+    padding: 0 50px 10px;
+    text-align: center;
+  }
+
+  @media (max-width: 620px) {
+    .gender-select-wrapper,
+    .name-email-wrapper {
+      flex-direction: column;
+      .gender-select,
+      .input-wrapper {
+        width: 100% !important;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-wrapper {
+      margin: 20px;
+    }
+    .personal-progress-wrapper {
+      flex-direction: column;
+    }
+  }
+}

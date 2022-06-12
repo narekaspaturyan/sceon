@@ -1,0 +1,41 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.custom-button {
+  @include d-flex-center;
+  background: $color-primary;
+  border-radius: $input-radius;
+  box-sizing: border-box;
+  color: $color-white;
+  width: 100%;
+  font-size: 18px;
+  height: $input-height;
+  line-height: 29px;
+  padding: 0 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+
+  &.no-background {
+    background: transparent;
+    height: auto;
+    color: $color-primary;
+
+    &:hover {
+      color: $color-primary-hover;
+    }
+  }
+
+  .left-icon {
+    display: inherit;
+    margin-right: 10px;
+  }
+  .right-icon {
+    display: inherit;
+    margin-left: 10px;
+  }
+}

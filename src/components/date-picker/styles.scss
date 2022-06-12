@@ -1,0 +1,35 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.date-picker-label {
+  display: inline-block;
+  padding: 0 0 10px 20px;
+  color: $color-text-secondary;
+}
+.date-picker-error {
+  display: inline-block;
+  padding: 10px 0 0 20px;
+  font-size: 12px;
+  color: $color-red;
+}
+
+.custom-date-picker-wrapper {
+  @include d-flex-center;
+  width: 100%;
+  height: $input-height;
+  border-radius: $input-radius;
+  border: solid 1px $color-border;
+
+  .calendar-icon {
+    padding-right: 20px;
+  }
+  .react-datepicker-wrapper {
+    input {
+      border: none;
+      padding: 13px 20px;
+      border-radius: $input-radius;
+      width: 100%;
+      height: 50px;
+    }
+  }
+}

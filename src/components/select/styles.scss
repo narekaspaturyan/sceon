@@ -1,0 +1,160 @@
+@import 'styles/variables.scss';
+
+.select-label {
+  margin: 0 0 10px 20px;
+  color: $color-text-secondary;
+}
+
+.select-error {
+  display: inline-block;
+  padding: 10px 0 0 20px;
+  font-size: 12px;
+  color: $color-red;
+}
+
+.custom-universal-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &.disabled-select {
+    pointer-events: none !important;
+  }
+
+  &.no-border {
+    .options {
+      .option span {
+        font-weight: 400;
+        font-size: 14px;
+        color: $color-text-secondary;
+      }
+      .option:hover {
+        span {
+          color: $color-text-primary;
+        }
+      }
+    }
+  }
+
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome and Opera */
+  }
+
+  .select {
+    min-height: $input-height;
+    width: 100%;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    color: $color-text-primary;
+
+    border-radius: $input-radius;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 20px;
+    text-transform: capitalize;
+
+    .placeholder {
+      color: $color-border;
+      font-size: 14px;
+    }
+
+    &.border-color {
+      border: 1px solid $color-primary;
+      .arrow-icon {
+        transform: rotate(180deg);
+        svg {
+          path {
+            fill: $color-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .selected-value {
+    margin-right: 20px;
+    white-space: nowrap;
+
+    text-align: left;
+    overflow: hidden;
+    &.text-transform-default {
+      text-transform: initial !important;
+    }
+  }
+
+  .options {
+    position: absolute;
+    top: 60px;
+    z-index: 99;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $input-radius;
+
+    box-sizing: border-box;
+    max-height: 250px;
+    overflow-y: auto;
+    width: 100%;
+
+    &.bottom {
+      top: unset;
+      bottom: 36px;
+    }
+
+    &.short-options {
+      max-height: 190px;
+    }
+
+    .option {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      min-height: 36px;
+      padding: 0 10px;
+      z-index: 99;
+      color: $color-text-secondary;
+      text-transform: capitalize;
+      font-weight: 500;
+      position: relative;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 100%;
+      .option-value {
+        display: inline-block;
+        white-space: nowrap;
+        max-width: 100%;
+      }
+      &.text-transform-default {
+        text-transform: unset !important;
+      }
+      &.text-transform-upperCase {
+        text-transform: uppercase !important;
+      }
+      &.selected {
+        color: $color-text-secondary;
+      }
+
+      &.selected:after {
+        content: '';
+        margin-left: 10px;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+
+      &:hover {
+        background-color: $color-primary-hover;
+      }
+    }
+  }
+}
